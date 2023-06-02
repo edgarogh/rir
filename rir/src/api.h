@@ -42,4 +42,6 @@ SEXP deserialize(ByteBuffer& sexpBuffer);
 REXPORT SEXP rirSetUserContext(SEXP f, SEXP udc);
 REXPORT SEXP rirCreateSimpleIntContext();
 
+__attribute__((unused)) REXPORT SEXP tryToRunCompilerServer();
+
 #endif // API_H_
