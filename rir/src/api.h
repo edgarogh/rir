@@ -7,7 +7,9 @@
 
 #include <stdint.h>
 
-#define REXPORT extern "C"
+#ifndef REXPORT
+#define REXPORT extern "C" __attribute__((unused))
+#endif
 
 extern int R_ENABLE_JIT;
 
@@ -46,6 +48,6 @@ SEXP deserialize(ByteBuffer& sexpBuffer);
 REXPORT SEXP rirSetUserContext(SEXP f, SEXP udc);
 REXPORT SEXP rirCreateSimpleIntContext();
 
-__attribute__((unused)) REXPORT SEXP tryToRunCompilerServer();
+REXPORT SEXP tryToRunCompilerServer();
 
 #endif // API_H_
