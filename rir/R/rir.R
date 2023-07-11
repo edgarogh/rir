@@ -259,3 +259,5 @@ recordings.eval <- function(expr, env=parent.frame()) {
     recordings.stop()
     recordings.get()
 }
+
+viz <- function(...) .Call("viz", list(...))

@@ -16,6 +16,7 @@
 #include "interpreter/interp_incl.h"
 #include "recording.h"
 #include "utils/measuring.h"
+#include "visualization.h"
 
 #include <cassert>
 #include <cstdio>
@@ -604,6 +605,8 @@ REXPORT SEXP rirCreateSimpleIntContext() {
     INTEGER(res)[1] = n2;
     return res;
 }
+
+SEXP viz(SEXP sexp) { return rir::visualization::viz(sexp); }
 
 bool startup() {
     initializeRuntime();
